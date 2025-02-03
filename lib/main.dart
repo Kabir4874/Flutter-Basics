@@ -46,8 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Container(
-
+      body: Center(
+        child: Container(
+          width: 100,
+          height: 100,
+          color: Colors.limeAccent,
+          child: Text('Hello DevOps!!!'),
+        ),
       ),
     );
   }
