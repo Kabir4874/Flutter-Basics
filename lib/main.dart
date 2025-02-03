@@ -46,13 +46,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Text('Hello Flutter Devs',
-        style: TextStyle(
-        fontSize: 25,
-        color: Colors.lightBlue,
-        fontWeight: FontWeight.bold,
-        backgroundColor: Colors.deepOrangeAccent
-      ),),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 100,
+          color: Colors.blueGrey,
+          child: Text('This is center of Container', style: TextStyle(
+            color: Colors.red
+          ),),
+        ),
+      )
     );
   }
 }
