@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 100,
           color: Colors.blueGrey,
           child: Text('This is center of Container', style: TextStyle(
-            color: Colors.red
+            color: Colors.green
           ),
           ),
         ),
