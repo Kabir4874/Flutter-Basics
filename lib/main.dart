@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 200,
           height: 100,
           color: Colors.blueGrey,
-          child: Text('This is center of Container', style: TextStyle(
+          child: Text('This is center', style: TextStyle(
             color: Colors.green
           ),
           ),
