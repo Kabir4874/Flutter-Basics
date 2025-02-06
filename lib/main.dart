@@ -46,19 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          width: 200,
-          height: 100,
-          color: Colors.blueGrey,
-          child: Center(
-            child: Text('This is center Text', style: TextStyle(
-              color: Colors.red
-            ),
-            ),
-          ),
-        ),
-      )
+      body: TextButton(onPressed: (){
+        print("Text Button Pressed");
+      }, child: Text('Click Here'))
     );
   }
 }
