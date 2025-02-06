@@ -46,9 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: TextButton(onPressed: (){
-        print("Text Button Pressed");
-      }, child: Text('Click Here'))
+      body: OutlinedButton(
+        onPressed: () {
+          print("Hello");
+        },
+        child: Text('Outlined Button'),
+      ),
     );
   }
 }
