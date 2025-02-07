@@ -46,24 +46,48 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: InkWell(
-          onTap: () {
-            print('Single Tap');
-          },
-          onLongPress: () {
-            print("Long Tap");
-          },
-          onDoubleTap: () {
-            print("Double Tap");
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-          ),
+      body:SingleChildScrollView(
+        child:  Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              height: 200,
+              width: 200,
+              color: Colors.lightGreen,
+            ),
+          ],
         ),
-      ),
+      )
     );
   }
 }
