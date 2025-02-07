@@ -46,20 +46,22 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body:Container(
-        height: 500,
-        width: 500,
-        color: Colors.green,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text('A' , style: TextStyle(fontSize: 25),),
-              Text('B',  style: TextStyle(fontSize: 25),),
-              Text('C' , style: TextStyle(fontSize: 25),),
-              Text('D' , style: TextStyle(fontSize: 25),),
-              Text('E' , style: TextStyle(fontSize: 25),),
-            ],
+      body: Center(
+        child: InkWell(
+          onTap: () {
+            print('Single Tap');
+          },
+          onLongPress: () {
+            print("Long Tap");
+          },
+          onDoubleTap: () {
+            print("Double Tap");
+          },
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.amber,
+          ),
         ),
       ),
     );
