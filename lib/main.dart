@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             return Text(
               'One',
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: Colors.green),
             );
           },
           itemCount: 5,
