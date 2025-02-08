@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(color: Colors.red),
             );
           },
-          itemCount: 6,
+          itemCount: 5,
         )));
   }
 }
