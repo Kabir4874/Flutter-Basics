@@ -49,9 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
             child: ListView.separated(
           itemBuilder: (context, index) {
-            return Text(
-              'One',
-              style: TextStyle(color: Colors.green),
+            return Row(
+              children: [
+                Text('One',style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),)
+              ],
             );
           },
           itemCount: 5,
