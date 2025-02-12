@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-            child: ListView.builder(
+            child: ListView.separated(
           itemBuilder: (context, index) {
             return Text(
               'One',
@@ -55,6 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           },
           itemCount: 5,
+          separatorBuilder: (context, index) {
+            return Divider(height: 100, thickness: 4);
+          },
         )));
   }
 }
