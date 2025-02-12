@@ -46,19 +46,32 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: Center(
-            child: ListView.separated(
-          itemBuilder: (context, index) {
-            return Row(
-              children: [
-                Text('One',style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),)
-              ],
-            );
-          },
-          itemCount: 5,
-          separatorBuilder: (context, index) {
-            return Divider(height: 100, thickness: 4);
-          },
-        )));
+        body: Row(
+          children: [
+            Container(
+              width: 50,
+              height: 100,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 50,
+              height: 100,
+              color: Colors.red,
+            ),
+            Container(
+              width: 50,
+              height: 100,
+              color: Colors.green,
+            ),
+            Expanded(
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.blueGrey,
+              ),
+            ),
+          ],
+        ),
+    );
   }
 }
