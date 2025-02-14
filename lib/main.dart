@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Container(
                 width: 50,
-                height: 80,
+                height: 100,
                 color: Colors.blueGrey,
               ),
             ),
