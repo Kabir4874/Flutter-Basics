@@ -46,32 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: Row(
-          children: [
-            Container(
-              width: 50,
-              height: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 50,
-              height: 100,
-              color: Colors.red,
-            ),
-            Container(
-              width: 50,
-              height: 100,
-              color: Colors.green,
-            ),
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.blueGrey,
-              ),
-            ),
-          ],
-        ),
+        body:
     );
   }
 }
