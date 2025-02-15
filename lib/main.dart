@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Hello World',
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 25),
             ),
           ),
         ),
