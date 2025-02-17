@@ -47,11 +47,16 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: RoundedButton(
-            btnName: "Login",
-            icon: Icon(Icons.lock),
-            callBack: () {
-              print("Logged In!!");
-            }, textStyle: TextStyle(fontSize: 25),));
+        body: Center(
+          child: Container(
+            width: 100,
+            child: RoundedButton(
+                btnName: "Login",
+                icon: Icon(Icons.lock),
+                callBack: () {
+                  print("Logged In!!");
+                }, textStyle: TextStyle(fontSize: 25),),
+          ),
+        ));
   }
 }
