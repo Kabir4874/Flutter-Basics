@@ -47,7 +47,20 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body:
+        body: RichText(text: TextSpan(
+          style: TextStyle(
+            color: Colors.grey,
+            fontSize: 22
+          ),
+          children: [
+            TextSpan(text: "Hello"),
+            TextSpan(text: "World!", style: TextStyle(
+              fontSize: 32,
+              color: Colors.blue,
+              fontWeight: FontWeight.bold
+            ))
+          ]
+        ))
     );
   }
 }
