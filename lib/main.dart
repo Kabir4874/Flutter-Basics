@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   var no1Controller= TextEditingController();
   var no2Controller= TextEditingController();
-
+var result="";
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -72,15 +72,47 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            ElevatedButton(onPressed: (){}, child: Text("Add")),
-                            ElevatedButton(onPressed: (){}, child: Text("Sub")),
-                            ElevatedButton(onPressed: (){}, child: Text("Mul")),
-                            ElevatedButton(onPressed: (){}, child: Text("Div")),
+                            ElevatedButton(onPressed: (){
+                              var no1= int.parse(no1Controller.text.toString());
+                              var no2= int.parse(no2Controller.text.toString());
+                              var sum= no1+no2;
+
+                              setState(() {
+                                result= "Sum is $sum";
+                              });
+                            }, child: Text("Add")),
+                            ElevatedButton(onPressed: (){
+                              var no1= int.parse(no1Controller.text.toString());
+                              var no2= int.parse(no2Controller.text.toString());
+                              var sub= no1-no2;
+
+                              setState(() {
+                                result= "Sub is $sub";
+                              });
+                            }, child: Text("Sub")),
+                            ElevatedButton(onPressed: (){
+                              var no1= int.parse(no1Controller.text.toString());
+                              var no2= int.parse(no2Controller.text.toString());
+                              var mul= no1*no2;
+
+                              setState(() {
+                                result= "Mul is $mul";
+                              });
+                            }, child: Text("Mul")),
+                            ElevatedButton(onPressed: (){
+                              var no1= int.parse(no1Controller.text.toString());
+                              var no2= int.parse(no2Controller.text.toString());
+                              var div= no1/no2;
+
+                              setState(() {
+                                result= "Div is $div";
+                              });
+                            }, child: Text("Div")),
                           ],
                         ),
                       ),
                       Padding(padding: EdgeInsets.all(21),
-                      child: Text("Result", style: TextStyle(
+                      child: Text(result, style: TextStyle(
                         fontSize: 25,
                         color: Colors.white
                       ),),)
