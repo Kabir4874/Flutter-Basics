@@ -60,9 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Column(
                     children: [
                       TextField(
+                        keyboardType: TextInputType.number,
                         controller: no1Controller,
                       ),
                       TextField(
+                        keyboardType: TextInputType.number,
                         controller: no2Controller,
                       ),
                       Padding(
@@ -77,6 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
+                      Padding(padding: EdgeInsets.all(21),
+                      child: Text("Result", style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white
+                      ),),)
                     ],
                   )
                 ],
