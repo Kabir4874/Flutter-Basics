@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.blue.shade100,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
                   children: [
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       controller: no2Controller,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(onPressed: (){}, child: Text("Add")),
                         ElevatedButton(onPressed: (){}, child: Text("Sub")),
