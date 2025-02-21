@@ -33,6 +33,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  var no1Controller= TextEditingController();
+  var no2Controller= TextEditingController();
 
   void _incrementCounter() {
     setState(() {
@@ -47,20 +49,33 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: RichText(text: TextSpan(
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 22
+        body: Container(
+          color: Colors.blue.shade100,
+          child: Center(
+            child: Column(
+              children: [
+                Column(
+                  children: [
+                    TextField(
+                      controller: no1Controller,
+                    ),
+                    TextField(
+                      controller: no2Controller,
+                    ),
+                    Row(
+                      children: [
+                        ElevatedButton(onPressed: (){}, child: Text("Add")),
+                        ElevatedButton(onPressed: (){}, child: Text("Sub")),
+                        ElevatedButton(onPressed: (){}, child: Text("Mul")),
+                        ElevatedButton(onPressed: (){}, child: Text("Div")),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
-          children: [
-            TextSpan(text: "Hello"),
-            TextSpan(text: "World!", style: TextStyle(
-              fontSize: 32,
-              color: Colors.blue,
-              fontWeight: FontWeight.bold
-            ))
-          ]
-        ))
+        )
     );
   }
 }
