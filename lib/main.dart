@@ -52,29 +52,35 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
           color: Colors.blue.shade100,
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    TextField(
-                      controller: no1Controller,
-                    ),
-                    TextField(
-                      controller: no2Controller,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ElevatedButton(onPressed: (){}, child: Text("Add")),
-                        ElevatedButton(onPressed: (){}, child: Text("Sub")),
-                        ElevatedButton(onPressed: (){}, child: Text("Mul")),
-                        ElevatedButton(onPressed: (){}, child: Text("Div")),
-                      ],
-                    ),
-                  ],
-                )
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      TextField(
+                        controller: no1Controller,
+                      ),
+                      TextField(
+                        controller: no2Controller,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ElevatedButton(onPressed: (){}, child: Text("Add")),
+                            ElevatedButton(onPressed: (){}, child: Text("Sub")),
+                            ElevatedButton(onPressed: (){}, child: Text("Mul")),
+                            ElevatedButton(onPressed: (){}, child: Text("Div")),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         )
