@@ -8,7 +8,7 @@ class IntroPage extends StatelessWidget{
       appBar: AppBar(
         title: Text("Intro"),
       ),
-      body: Text('Intro Page') ,
+      body: Text('Intro') ,
     );
 
   }
