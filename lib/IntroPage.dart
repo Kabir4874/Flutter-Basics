@@ -6,7 +6,7 @@ class IntroPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Intro"),
+        title: Text("Intro Screen"),
       ),
       body: Text('Intro Page') ,
     );
