@@ -49,7 +49,7 @@ var result="";
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body:AnimatedContainer(duration: duration)
+        body:
     );
   }
 }
