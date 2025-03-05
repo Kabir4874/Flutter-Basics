@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/widges/rounded_btn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,9 +32,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  var no1Controller= TextEditingController();
-  var no2Controller= TextEditingController();
-var result="";
+  var no1Controller = TextEditingController();
+  var no2Controller = TextEditingController();
+  var result = "";
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -45,11 +44,33 @@ var result="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: [
+              Center(
+                child: Text("Hello Car"),
+              ),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
         ),
-        body:
+      ),
     );
   }
 }
