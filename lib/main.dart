@@ -48,36 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(tabs: [
-              Tab(
-                icon: Icon(Icons.directions_car),
-                text: "Car",
-              ),
-              Tab(
-                icon: Icon(Icons.directions_train),
-                text: "Train",
-              ),
-              Tab(
-                icon: Icon(Icons.directions_bike),
-                text: "Bike",
-              ),
-            ]),
-          ),
-          body: TabBarView(children: [
-            Center(
-              child: Text('Car'),
-            ),
-            Center(
-              child: Text('Train'),
-            ),
-            Center(
-              child: Text('Bike'),
-            ),
-          ]),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: Text('Drawer Header')),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
         ),
       ),
     );
