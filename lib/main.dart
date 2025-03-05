@@ -59,3 +59,19 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+void main() async {
+  final db = await openDatabase('app.db', version: 1, onCreate: (db, version) {
+    return db.execute(
+        'CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)');
+  });
+
+  await db.insert('users', {'name': 'Alice', 'age': 25});
+
+  List<Map> users = await db.query('users');
+  print(users);
+
+  await db.update('users', {'age': 26}, where: 'name=?', whereArgs: ['Alice']);
+
+  await db.delete('users', where: 'name=?', whereArgs: ['Alice']);
+}
