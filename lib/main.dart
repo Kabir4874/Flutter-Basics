@@ -66,4 +66,14 @@ void main() async {
         'CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)');
   });
   await db.insert('users', {'name': 'Alice', 'age': 25});
+  await db.execute("UPDATE users SET age=25 where id=2");
+  await db.execute("DELETE FROM users where id=2");
+  List<Map> result = await db.query('users', where: 'age>18', whereArgs: [18]);
+}
+
+void main() async {
+  Hive.init('hive_data');
+  var box = await Hive.openBox('userBox');
+  box.put('username', 'Alice');
+  print('Username: ${box.get('username')}');
 }
