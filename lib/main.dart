@@ -48,19 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(child: Text('Drawer Header')),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.business), label: "Business"),
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: "School"),
+        ],
       ),
     );
   }
