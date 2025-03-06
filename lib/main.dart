@@ -59,29 +59,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-@Entity()
-class User {
-  @id()
-  int id = 0;
-  String name;
-  int age;
-  User({required this.name, required this.age});
-}
-
-void main() async {
-  var store = await openStore();
-
-  var box = store.box<User>();
-  box.put(name: 'Alice', age: 25);
-
-  var user = box.get(1);
-  print(user?.name);
-
-  if (user != null) {
-    user.age = 26;
-    box.put(user);
-  }
-
-  box.remove(1);
-}
