@@ -60,18 +60,28 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+@Entity()
+class User {
+  @id()
+  int id = 0;
+  String name;
+  int age;
+  User({required this.name, required this.age});
+}
+
 void main() async {
-  final db = await openDatabase('app.db', version: 1, onCreate: (db, version) {
-    return db.execute(
-        'CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)');
-  });
+  var store = await openStore();
 
-  await db.insert('users', {'name': 'Alice', 'age': 25});
+  var box = store.box<User>();
+  box.put(name: 'Alice', age: 25);
 
-  List<Map> users = await db.query('users');
-  print(users);
+  var user = box.get(1);
+  print(user?.name);
 
-  await db.update('users', {'age': 26}, where: 'name=?', whereArgs: ['Alice']);
+  if (user != null) {
+    user.age = 26;
+    box.put(user);
+  }
 
-  await db.delete('users', where: 'name=?', whereArgs: ['Alice']);
+  box.remove(1);
 }
