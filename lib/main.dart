@@ -35,8 +35,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: ColorScheme.dark(
+          primary: Colors.deepPurple,
+          secondary: Colors.teal,
+          background: const Color.fromARGB(255, 253, 213, 213),
+        ),
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+              color: Colors.white), // Adjusted text style
+          bodyLarge: TextStyle(fontSize: 16, color: Colors.black87),
+        ),
+        useMaterial3: true,
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -53,8 +64,10 @@ class MyApp extends StatelessWidget {
                 return Center(child: const CircularProgressIndicator());
               } else if (snapshot.hasError) {
                 return Center(
-                  child: Text('Error: ${snapshot.error}',
-                      style: const TextStyle(color: Colors.red)),
+                  child: Text(
+                    'Error: ${snapshot.error}',
+                    style: const TextStyle(color: Colors.red),
+                  ),
                 );
               } else if (snapshot.data == null || snapshot.data!.isEmpty) {
                 return const Center(child: Text('No data available.'));
@@ -86,6 +99,7 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Card(
       elevation: 8,
       margin: const EdgeInsets.symmetric(vertical: 10),
@@ -93,7 +107,7 @@ class UserCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(screenWidth * 0.04), // Responsive padding
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -109,12 +123,13 @@ class UserCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 15),
-                Text(
-                  user.name,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                Expanded(
+                  child: Text(
+                    user.name,
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                   ),
                 ),
               ],
